@@ -7,7 +7,7 @@ class TreasureBox
   class << self
     
     def get
-      ITEMS[rand(1..@@drop_limit)] #配列じゃなくてHashのKeyを数字にして検索しているから, rand(full_items.length)ってしちゃダメ.
+      ITEMS[rand(ITEMS.length)]
     end
     
     def each
@@ -18,16 +18,14 @@ class TreasureBox
     
     private
       def create_items
-        full_items = {}
-        i = 0
+        items = []
         DROP_RATE.each do |item, weight|
           weight.times.each do
-            full_items.store(i+=1, item)
+            items << item
           end
         end
-        @@drop_limit = i
-        
-        full_items
+
+        items
       end
   end
   
