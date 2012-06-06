@@ -23,4 +23,8 @@ class Inventory
   def show_all
     puts all
   end
+  
+  def count
+    @inventory.values.inject(0) {|count, i| count += i}
+  end
 end

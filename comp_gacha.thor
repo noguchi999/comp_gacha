@@ -16,6 +16,7 @@ class CompGacha < Thor
         inventory.collect TreasureBox.get
       end
       inventory.show_all
+      puts "How many all junk items in your inventory? => #{inventory.count}"
     }
     
     puts result
