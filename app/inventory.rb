@@ -1,7 +1,7 @@
 # coding: utf-8
 class Inventory
   
-  def initialize
+  def initialize  
     @inventory = {}
     TreasureBox.each do |item|
       @inventory.store(item.to_sym, 0)
