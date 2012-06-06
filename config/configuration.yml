@@ -1,0 +1,14 @@
+common: &common
+  !ruby/sym sample: ''
+
+development:
+  <<: *common
+  !ruby/sym sample: ''
+
+test:
+  <<: *common
+  !ruby/sym sample: ''
+
+product:
+  <<: *common
+  !ruby/sym sample: ''
