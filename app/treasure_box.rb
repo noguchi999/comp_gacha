@@ -18,14 +18,16 @@ class TreasureBox
     
     private
       def create_items
-        items = {}
+        full_items = {}
         i = 0
         DROP_RATE.each do |item, weight|
-          items = items.merge(weight.times.inject(Hash.new){|h, v| h.store(i+=1, item); h})
+          weight.times.each do
+            full_items.store(i+=1, item)
+          end
         end
         @@drop_limit = i
         
-        items
+        full_items
       end
   end
   
